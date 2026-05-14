@@ -30,6 +30,7 @@
 - Bumped min Go GitHub action version to 1.26.3 because it comes with some [minor bug and security fixes](https://github.com/golang/go/issues?q=milestone%3AGo1.26.3).
 
 > **Personal note:** Upgrading to this version — the superuser IP whitelist feature is exactly what I needed for my home server setup. Remember to set this after deploying so only my home IP can access the admin dashboard.
+> Also worth noting: the internal watcher for `pb_data/.notify` is a neat approach — avoids inotify limits that can be a pain on low-resource VPS setups.
 
 ## v0.37.5
 
@@ -50,6 +51,4 @@
 
 - Fixed SMTP IPv6 network address format ([#7659](https://github.com/pocketbase/pocketbase/issues/7659)).
 
-- Fixed autocomplete selection not properly updating the underlying input value ([#7664](https://github.com/pocketbase/pocketbase/issues/7664)).
-
-- Added `ghupdate.BaseURL` config option ([#7665](https://github.com/pocketbase/pocketbase/
+- Fixed autoco
