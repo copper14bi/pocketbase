@@ -3,7 +3,7 @@
 
 > **Personal note:** I'm tracking this fork primarily to stay on stable backported patches
 > while avoiding breaking changes from the main branch. Useful reference for my self-hosted setup.
-> Last reviewed: 2025-07-10
+> Last reviewed: 2025-07-14
 
 ---
 
@@ -52,6 +52,6 @@
 ## v0.22.37
 
 - (_Backported from v0.34.1_) - Added missing `:` char to the autocomplete regex ([#7353](https://github.com/pocketbase/pocketbase/pull/7353)).
+    _**Personal note:** Confirmed this fix resolves the autocomplete issue I was seeing in filter expressions on my instance._
 
-- (_Backported from v0.34.1_) Bumped min Go GitHub action version to 1.25.5 because it comes with some [minor security fixes](https://github.com/golang/go/issues?q=milestone%3AGo1.25.5).
-    _The runner action was also updated to `actions/setup-go@v6` since th
+- (_Backported from v0.34.1_) Bumped min Go GitHub action version to 1.25.5 because it comes with some [minor security fixe
