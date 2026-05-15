@@ -3,6 +3,7 @@
 
 > **Personal note:** I'm tracking this fork primarily to stay on stable backported patches
 > while avoiding breaking changes from the main branch. Useful reference for my self-hosted setup.
+> Last reviewed: 2025-07-10
 
 ---
 
@@ -17,6 +18,7 @@
     _In case the userinfo data is not sufficient, some of the providers now send a separate list emails request in order to minimize eventual linking security issues caused by custom onpremise setups (e.g. Gitea/Forgejo allows skipping the email verification if an ENV variable is configured)._
 
 - (_Backported from v0.37.4_) ⚠️ Fixed a pre-hijacking OAuth2 linking vulnerability ([#7662](https://github.com/pocketbase/pocketbase/discussions/7662)).
+    _**Personal note:** Applied this patch immediately to my self-hosted instance — important security fix._
 
 
 ## v0.22.41
@@ -52,9 +54,4 @@
 - (_Backported from v0.34.1_) - Added missing `:` char to the autocomplete regex ([#7353](https://github.com/pocketbase/pocketbase/pull/7353)).
 
 - (_Backported from v0.34.1_) Bumped min Go GitHub action version to 1.25.5 because it comes with some [minor security fixes](https://github.com/golang/go/issues?q=milestone%3AGo1.25.5).
-    _The runner action was also updated to `actions/setup-go@v6` since the previous v5 Go source seems [no longer accessible](https://github.com/actions/setup-go/pull/665#issuecomment-3416693714)._
-
-
-## v0.22.36
-
-- (_Backported from v0.30.2_) Bumped min Go GitHub a
+    _The runner action was also updated to `actions/setup-go@v6` since th
