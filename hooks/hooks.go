@@ -54,7 +54,8 @@ func registerRecordHooks(app *pocketbase.PocketBase) {
 	})
 
 	// Log record deletions across all collections
-	// NOTE: deletion events do not carry the full record fields, only Id and collection info
+	// NOTE: deletion events do not carry the full record fields, only Id and collection info.
+	// This means you cannot access e.Record.Get("someField") here — only Id and Collection().
 	app.OnRecordAfterDeleteRequest().Add(func(e *core.RecordDeleteEvent) error {
 		log.Printf("[hooks] Record deleted from collection '%s': %s\n",
 			e.Record.Collection().Name,
