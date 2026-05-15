@@ -5,6 +5,7 @@ package hooks
 import (
 	"log"
 
+	"github.com/labstack/echo/v5"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/core"
 )
@@ -53,6 +54,7 @@ func registerRecordHooks(app *pocketbase.PocketBase) {
 	})
 
 	// Log record deletions across all collections
+	// NOTE: deletion events do not carry the full record fields, only Id and collection info
 	app.OnRecordAfterDeleteRequest().Add(func(e *core.RecordDeleteEvent) error {
 		log.Printf("[hooks] Record deleted from collection '%s': %s\n",
 			e.Record.Collection().Name,
