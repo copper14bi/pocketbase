@@ -32,6 +32,7 @@
 > **Personal note:** Upgrading to this version — the superuser IP whitelist feature is exactly what I needed for my home server setup. Remember to set this after deploying so only my home IP can access the admin dashboard.
 > Also worth noting: the internal watcher for `pb_data/.notify` is a neat approach — avoids inotify limits that can be a pain on low-resource VPS setups.
 > **Migration reminder:** After upgrading, run `./pocketbase migrate up` before starting the server to apply any pending DB migrations cleanly.
+> **Tip:** If you're behind a dynamic IP, consider whitelisting your entire home subnet (e.g. `192.168.1.0/24`) rather than a single IP to avoid getting locked out after a DHCP lease renewal.
 
 ## v0.37.5
 
@@ -46,6 +47,4 @@
 
 ## v0.37.4
 
-- Added backups list scroll container ([#7655](https://github.com/pocketbase/pocketbase/issues/7655)).
-
-- Optimized record upsert and preview modals data lo
+- Added back
